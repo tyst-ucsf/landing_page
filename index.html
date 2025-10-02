@@ -2,13 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #4e73df, #1cc88a);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    /* headings scale nicely on mobile/desktop */
+    h1 {
+      margin: 20px 0 10px 0;              /* was margin-bottom: 10px */
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    }
+    h2 {
+      margin-top: 30px;                   /* was 40px */
+      font-size: clamp(1.25rem, 2.8vw, 1.8rem);
+    }
+    p {
+      max-width: 700px;
+      margin: 15px auto;
+      font-size: clamp(1rem, 2.4vw, 1.1rem);
+      line-height: 1.6;
+      padding: 0 6px;                     /* add side padding for small screens */
+    }
+    .links {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 700px;
+      width: 100%;
+    }
+    .links a {
+      text-decoration: none;
+      background: #fff;
+      color: #333;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.2s;
+      min-height: 44px;                   /* better tap target */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .links a:hover {
+      background: #f1f1f1;
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    /* Mobile-specific tweaks */
+    @media (max-width: 600px) {
+      body { padding: 28px 14px; }
+      .links { gap: 12px; }
+      .links a {
+        width: 100%;                      /* full-width buttons on mobile */
+        max-width: 700px;
+        padding: 14px 16px;               /* a bit taller for touch */
+      }
+    }
+  </style>
 </head>
-<body style="font-family:sans-serif; text-align:center; padding:50px;">
-  <h1>Welcome to My Site</h1>
-  <p>Choose where to go:</p>
-  <a href="https://link1.com">Link 1</a> | 
-  <a href="https://link2.com">Link 2</a> | 
-  <a href="https://link3.com">Link 3</a>
+<body>
+  <h1>Tyler Stepaniak</h1>
+
+  <h2>About Me</h2>
+  <p>
+    <b>On a mission to promote excellence and equity in healthcare</b>
+  </p>
+  <p>
+    Recent Master of Science graduate and data analyst with expertise in Python, R, SQL, and data visualization. 
+    Skilled in predictive modeling, ETL pipeline development, and AI-augmented tools. 
+    Adept at bridging wet lab, clinical, and data sciences. 
+    Interned in Geneva with WHO, developing data-sharing tool to support global health initiatives.
+  </p>
+
+  <h2>Education</h2>
+  <div style="max-width:700px; margin:0 auto; text-align:left;">
+    <div style="margin-bottom:25px;">
+      <strong>Master of Science</strong><br>
+      Institute for Global Health Sciences (IGHS)<br>
+      University of California, San Francisco, CA — <em>July 2025</em><br>
+      <span style="font-size:0.95em; line-height:1.5;">
+        <strong>Capstone:</strong> Volatile Organic Compound Biosignatures in Breath as Diagnostic Tool for Tuberculosis Triage in Adults.<br>
+        Developed machine learning models (<em>SVM, LASSO</em>) to predict disease status.
+      </span>
+    </div>
+    <div>
+      <strong>Bachelor of Arts</strong><br>
+      Double Major in Biochemistry and Philosophy<br>
+      University of Colorado at Boulder, CO — <em>December 2021</em>
+    </div>
+  </div>
+
+  <h2>Publications</h2>
+  <ul style="list-style-type:none; padding:0; max-width:700px; margin:0 auto; text-align:left;">
+    <li style="margin-bottom:15px;">
+      <strong>Combined Weight Loss and Exercise Training Alters Skeletal Muscle Subcellular Lipid Localization and Intermuscular Adipose Tissue Cellular Composition.</strong><br>
+      Zemsky et al., <em>Diabetes</em>, <b>2025</b><br>
+      <a href="https://doi.org/10.2337/db25-0492" target="_blank" rel="noopener">Read Article</a>
+    </li>
+    <li style="margin-bottom:15px;">
+      <strong>It's Time for Change, We Cannot Let Ukraine Be the Next Congo.</strong><br>
+      Stepaniak (Op-ed), UCSF Synapse, <b>2025</b><br>
+      <a href="https://synapse.ucsf.edu/articles/2025/05/06/its-time-change-we-cannot-let-ukraine-be-next-congo" target="_blank" rel="noopener">Read Article</a>
+    </li>
+    <li style="margin-bottom:15px;">
+      <strong>Coronal Heating as Determined by the Solar Flare Frequency Distribution Obtained by Aggregating Case Studies.</strong><br>
+      Mason et al., <em>ApJ</em>, <b>2023</b>, Vol. 948, 71<br>
+      <a href="https://doi.org/10.3847/1538-4357/accc89" target="_blank" rel="noopener">Read Article</a>
+    </li>
+  </ul>
+
+  <h2>Find Me Online</h2>
+  <div class="links">
+    <a href="https://github.com/tyst-ucsf" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/tylerstepaniak" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:tyler@stepaniak.com">Email Me</a>
+  </div>
+
+  <footer>&copy; 2025 stepaniak.com</footer>
 </body>
 </html>
