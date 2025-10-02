@@ -23,7 +23,7 @@
       box-shadow: 2px 0 12px rgba(0,0,0,0.25);
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* spread content */
+      justify-content: space-between;
       padding: 24px 16px;
       z-index: 1000;
     }
@@ -37,7 +37,7 @@
     .nav-links {
       display: flex;
       flex-direction: column;
-      justify-content: space-around; /* evenly spaced vertically */
+      justify-content: space-around;
       flex: 1;
       gap: 10px;
       margin: 20px 0;
@@ -111,45 +111,39 @@
       color: rgba(255, 255, 255, 0.8);
     }
     @media (max-width: 800px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: fixed;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      padding: 8px 10px;
-      gap: 8px;
-      box-sizing: border-box;
+      .sidebar {
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 10px;
+        box-sizing: border-box;
+      }
+      .sidebar .brand {
+        font-size: 0.95rem;
+        margin: 0;
+      }
+      .nav-links {
+        flex-direction: row;
+        gap: 8px;
+        overflow-x: auto;
+        margin: 0;
+      }
+      .nav-links a {
+        min-width: auto;
+        padding: 6px 10px;
+        font-size: 0.85rem;
+      }
+      main {
+        margin-left: 0;
+        padding-top: 60px;
+      }
     }
-    .sidebar .brand {
-      margin: 0;
-      white-space: nowrap;
-      flex: 1 1 100%;
-      text-align: left;
-    }
-    .nav-links {
-      flex: 1 1 100%;
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-      justify-content: flex-start;
-    }
-    .nav-links a {
-      min-width: 110px;
-      padding: 10px 12px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-    }
-    main {
-      margin-left: 0;
-      padding-top: 96px;
-    }
-  }
   </style>
 </head>
 <body>
