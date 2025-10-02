@@ -111,33 +111,45 @@
       color: rgba(255, 255, 255, 0.8);
     }
     @media (max-width: 800px) {
-      .sidebar {
-        width: 100%;
-        height: 60px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 10px;
-        gap: 10px;
-      }
-      .sidebar .brand { margin: 0 10px 0 6px; white-space: nowrap; }
-      .nav-links {
-        flex-direction: row;
-        flex: none;
-        gap: 8px;
-        overflow-x: auto;
-        margin: 0;
-      }
-      .nav-links a {
-        min-width: 110px;
-        padding: 10px 12px;
-        border-radius: 8px;
-      }
-      main {
-        margin-left: 0;
-        padding-top: 80px;
-      }
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 8px 10px;
+      gap: 8px;
+      box-sizing: border-box;
     }
+    .sidebar .brand {
+      margin: 0;
+      white-space: nowrap;
+      flex: 1 1 100%;
+      text-align: left;
+    }
+    .nav-links {
+      flex: 1 1 100%;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      justify-content: flex-start;
+    }
+    .nav-links a {
+      min-width: 110px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    main {
+      margin-left: 0;
+      padding-top: 96px;
+    }
+  }
   </style>
 </head>
 <body>
@@ -208,7 +220,13 @@
       </ul>
     </section>
 
-    <footer>&copy; 2025 stepaniak.com</footer>
+    <footer>
+      &copy; 2025 stepaniak.com
+      <br>
+      <a href="mailto:info@stepaniak.com" style="color:#fff; text-decoration:none; margin-top:6px; display:inline-block;">
+        info@stepaniak.com
+      </a>
+    </footer>
   </main>
 </body>
 </html>
