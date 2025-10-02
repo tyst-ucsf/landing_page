@@ -6,31 +6,37 @@
   <title>Welcome</title>
   <style>
     body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #2c3e50, #4b79a1);
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-  }
+      font-family: Verdana, Geneva, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #2c3e50, #4b79a1);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    section {
+      width: 100%;
+      max-width: 900px;
+      margin: 60px 0;
+      padding: 0 10px;
+    }
     h1 {
       margin: 20px 0 10px 0;
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     }
     h2 {
-      margin-top: 30px;
-      font-size: clamp(1.25rem, 2.8vw, 1.8rem);
+      margin: 0 0 20px 0;
+      font-size: clamp(1.4rem, 3vw, 2rem);
     }
     p {
       max-width: 700px;
       margin: 15px auto;
       font-size: clamp(1rem, 2.4vw, 1.1rem);
-      line-height: 1.6;
+      line-height: 1.7;
       padding: 0 6px;
     }
     .links {
@@ -59,12 +65,21 @@
       background: #f1f1f1;
       transform: scale(1.05);
     }
+    ul.pub-list {
+      list-style-type: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    ul.pub-list li {
+      margin-bottom: 15px;
+    }
     footer {
-      margin-top: 50px;
+      margin: 50px 0 30px 0;
       font-size: 0.9em;
       color: rgba(255, 255, 255, 0.8);
     }
-    /* Mobile-specific tweaks */
     @media (max-width: 600px) {
       body { padding: 28px 14px; }
       .links { gap: 12px; }
@@ -77,62 +92,70 @@
   </style>
 </head>
 <body>
-  <h1>Tyler Stepaniak</h1>
+  <header>
+    <h1>Tyler Stepaniak</h1>
+  </header>
 
-  <h2>About Me</h2>
-  <p>
-    <b>On a mission to promote excellence and equity in healthcare</b>
-  </p>
-  <p>
-    Recent Master of Science graduate and data analyst with expertise in Python, R, SQL, and data visualization. 
-    Skilled in predictive modeling, ETL pipeline development, and AI-augmented tools. 
-    Adept at bridging wet lab, clinical, and data sciences. 
-    Interned in Geneva with WHO, developing data-sharing tool to support global health initiatives.
-  </p>
+  <section id="about">
+    <h2>About Me</h2>
+    <p><b>On a mission to promote excellence and equity in healthcare</b></p>
+    <p>
+      Recent Master of Science graduate and data analyst with expertise in Python, R, SQL, and data visualization. 
+      Skilled in predictive modeling, ETL pipeline development, and AI-augmented tools. 
+      Adept at bridging wet lab, clinical, and data sciences. 
+      Interned in Geneva with WHO, developing a data-sharing tool to support global health initiatives.
+    </p>
+  </section>
 
-  <h2>Education</h2>
-  <div style="max-width:700px; margin:0 auto; text-align:left;">
-    <div style="margin-bottom:25px;">
-      <strong>Master of Science</strong><br>
-      Institute for Global Health Sciences (IGHS)<br>
-      University of California, San Francisco, CA — <em>July 2025</em><br>
-      <span style="font-size:0.95em; line-height:1.5;">
-        <strong>Capstone:</strong> Volatile Organic Compound Biosignatures in Breath as Diagnostic Tool for Tuberculosis Triage in Adults.<br>
-        Developed machine learning models (<em>SVM, LASSO</em>) to predict disease status.
-      </span>
+  <section id="education">
+    <h2>Education</h2>
+    <div style="max-width:700px; margin:0 auto; text-align:left;">
+      <div style="margin-bottom:25px;">
+        <strong>Master of Science</strong><br>
+        Institute for Global Health Sciences (IGHS)<br>
+        University of California, San Francisco, CA — <em>July 2025</em><br>
+        <span style="font-size:0.95em; line-height:1.6;">
+          <strong>Capstone:</strong> Volatile Organic Compound Biosignatures in Breath as Diagnostic Tool for Tuberculosis Triage in Adults.<br>
+          Developed machine learning models (<em>SVM, LASSO</em>) to predict disease status.
+        </span>
+      </div>
+      <div>
+        <strong>Bachelor of Arts</strong><br>
+        Double Major in Biochemistry and Philosophy<br>
+        University of Colorado at Boulder, CO — <em>December 2021</em>
+      </div>
     </div>
-    <div>
-      <strong>Bachelor of Arts</strong><br>
-      Double Major in Biochemistry and Philosophy<br>
-      University of Colorado at Boulder, CO — <em>December 2021</em>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="pub-list">
+      <li>
+        <strong>Combined Weight Loss and Exercise Training Alters Skeletal Muscle Subcellular Lipid Localization and Intermuscular Adipose Tissue Cellular Composition.</strong><br>
+        Zemsky et al., <em>Diabetes</em>, <b>2025</b><br>
+        <a href="https://doi.org/10.2337/db25-0492" target="_blank" rel="noopener noreferrer">Read Article</a>
+      </li>
+      <li>
+        <strong>It's Time for Change, We Cannot Let Ukraine Be the Next Congo.</strong><br>
+        Stepaniak (Op-ed), UCSF Synapse, <b>2025</b><br>
+        <a href="https://synapse.ucsf.edu/articles/2025/05/06/its-time-change-we-cannot-let-ukraine-be-next-congo" target="_blank" rel="noopener noreferrer">Read Article</a>
+      </li>
+      <li>
+        <strong>Coronal Heating as Determined by the Solar Flare Frequency Distribution Obtained by Aggregating Case Studies.</strong><br>
+        Mason et al., <em>ApJ</em>, <b>2023</b>, Vol. 948, 71<br>
+        <a href="https://doi.org/10.3847/1538-4357/accc89" target="_blank" rel="noopener noreferrer">Read Article</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="links">
+    <h2>Find Me Online</h2>
+    <div class="links">
+      <a href="https://github.com/tyst-ucsf" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/tylerstepaniak" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:tyler@stepaniak.com">Email Me</a>
     </div>
-  </div>
-
-  <h2>Publications</h2>
-  <ul style="list-style-type:none; padding:0; max-width:700px; margin:0 auto; text-align:left;">
-    <li style="margin-bottom:15px;">
-      <strong>Combined Weight Loss and Exercise Training Alters Skeletal Muscle Subcellular Lipid Localization and Intermuscular Adipose Tissue Cellular Composition.</strong><br>
-      Zemsky et al., <em>Diabetes</em>, <b>2025</b><br>
-      <a href="https://doi.org/10.2337/db25-0492" target="_blank" rel="noopener">Read Article</a>
-    </li>
-    <li style="margin-bottom:15px;">
-      <strong>It's Time for Change, We Cannot Let Ukraine Be the Next Congo.</strong><br>
-      Stepaniak (Op-ed), UCSF Synapse, <b>2025</b><br>
-      <a href="https://synapse.ucsf.edu/articles/2025/05/06/its-time-change-we-cannot-let-ukraine-be-next-congo" target="_blank" rel="noopener">Read Article</a>
-    </li>
-    <li style="margin-bottom:15px;">
-      <strong>Coronal Heating as Determined by the Solar Flare Frequency Distribution Obtained by Aggregating Case Studies.</strong><br>
-      Mason et al., <em>ApJ</em>, <b>2023</b>, Vol. 948, 71<br>
-      <a href="https://doi.org/10.3847/1538-4357/accc89" target="_blank" rel="noopener">Read Article</a>
-    </li>
-  </ul>
-
-  <h2>Find Me Online</h2>
-  <div class="links">
-    <a href="https://github.com/tyst-ucsf" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/tylerstepaniak" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="mailto:tyler@stepaniak.com">Email Me</a>
-  </div>
+  </section>
 
   <footer>&copy; 2025 stepaniak.com</footer>
 </body>
