@@ -6,184 +6,390 @@
   <title>Tyler Stepaniak | About Me</title>
   <link rel="icon" href="ts.ico" type="image/x-icon">
   <link rel="icon" type="image/png" href="ts.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-gradient-start: #1a2535;
+      --bg-gradient-end:   #162338;
+      --sidebar-bg:        rgba(13, 18, 28, 0.92);
+      --sidebar-border:    rgba(255, 255, 255, 0.06);
+      --nav-link-color:    rgba(255, 255, 255, 0.65);
+      --nav-link-hover:    #ffffff;
+      --nav-link-active:   #7dd3fc;
+      --accent:            #7dd3fc;
+      --accent-dim:        rgba(125, 211, 252, 0.15);
+      --card-bg:           rgba(255, 255, 255, 0.04);
+      --card-border:       rgba(255, 255, 255, 0.08);
+      --text-primary:      #f1f5f9;
+      --text-muted:        rgba(241, 245, 249, 0.6);
+      --font-display:      'Fraunces', Georgia, serif;
+      --font-body:         'Plus Jakarta Sans', system-ui, sans-serif;
+      --t-fast:            0.18s ease;
+      --t-medium:          0.32s ease;
+      --sidebar-width:     240px;
+    }
+
     body {
-      font-family: Verdana, Geneva, sans-serif;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 400;
       min-height: 100vh;
       margin: 0;
-      background: linear-gradient(135deg, #293b4d, #264d3b);
-      color: #fff;
+      background: linear-gradient(145deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      background-attachment: fixed;
+      color: var(--text-primary);
     }
+
     .sidebar {
       position: fixed;
       top: 0;
       left: 0;
       height: 100vh;
-      width: 220px;
-      background: rgba(22, 29, 39, 0.85);
-      backdrop-filter: blur(2px);
-      box-shadow: 2px 0 12px rgba(0,0,0,0.25);
+      width: var(--sidebar-width);
+      background: var(--sidebar-bg);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-right: 1px solid var(--sidebar-border);
+      box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
       display: flex;
       flex-direction: column;
-      padding: 24px 16px;
+      padding: 28px 14px 24px;
       z-index: 1000;
       box-sizing: border-box;
     }
+
+    .nav-section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0 12px;
+      margin-bottom: 8px;
+    }
+
     .nav-pages {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-bottom: 20px;
+      gap: 2px;
+      margin-bottom: 24px;
     }
-    .nav-pages a {
+
+    .nav-pages a,
+    .nav-links a {
       text-decoration: none;
-      background: #ffffff;
-      color: #1f2937;
-      padding: 12px 16px;
+      color: var(--nav-link-color);
+      background: transparent;
+      padding: 9px 12px 9px 16px;
       border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.2s;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition:
+        color var(--t-fast),
+        background var(--t-fast),
+        border-left-color var(--t-fast),
+        padding-left var(--t-fast);
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
       width: 100%;
       box-sizing: border-box;
-      font-size: 0.95rem;
+      border-left: 3px solid transparent;
+      letter-spacing: 0.01em;
     }
-    .nav-pages a:hover { background: #eef0f3; }
+
+    .nav-pages a:hover,
+    .nav-links a:hover {
+      color: var(--nav-link-hover);
+      background: rgba(255, 255, 255, 0.06);
+      border-left-color: rgba(125, 211, 252, 0.4);
+      padding-left: 20px;
+    }
+
     .nav-pages a.active {
-      background: #c8e6c9;
-      color: #1b5e20;
+      color: var(--nav-link-active);
+      background: var(--accent-dim);
+      border-left-color: var(--accent);
+      font-weight: 600;
+      padding-left: 20px;
     }
+
     .nav-divider {
       border: none;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      margin: 4px 0 16px 0;
+      border-top: 1px solid var(--sidebar-border);
+      margin: 0 4px 16px;
     }
+
     .nav-links {
       display: flex;
       flex-direction: column;
       flex: 1;
-      justify-content: space-evenly;
+      justify-content: flex-start;
       align-items: stretch;
+      gap: 2px;
     }
-    .nav-links a {
-      text-decoration: none;
-      background: #ffffff;
-      color: #1f2937;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.2s;
-      min-height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .nav-links a:hover { background: #eef0f3; }
 
     main {
-      margin-left: 220px;
+      margin-left: var(--sidebar-width);
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 40px 20px;
+      padding: 48px 28px 40px;
+      min-height: 100vh;
     }
+
+    header {
+      padding: 16px 0 8px;
+    }
+
     header h1 {
-      margin: 20px 0 10px 0;
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.02em;
+      margin: 0 0 10px 0;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent) 60%, rgba(255,255,255,0.85) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
+
+    header::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--accent);
+      margin: 12px auto 0;
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+
     section {
       width: 100%;
       max-width: 900px;
-      margin: 60px 0;
-      padding: 0 10px;
+      margin: 40px 0;
+      padding: 36px 40px;
+      box-sizing: border-box;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      backdrop-filter: blur(8px) saturate(1.2);
+      -webkit-backdrop-filter: blur(8px) saturate(1.2);
+      box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: sectionFadeUp 0.5s var(--t-medium) both;
     }
+
+    section:nth-of-type(1) { animation-delay: 0.05s; }
+    section:nth-of-type(2) { animation-delay: 0.15s; }
+    section:nth-of-type(3) { animation-delay: 0.25s; }
+    section:nth-of-type(4) { animation-delay: 0.35s; }
+
     h2 {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(1.3rem, 2.6vw, 1.75rem);
       margin: 0 0 20px 0;
-      font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--card-border);
     }
+
     p {
       max-width: 700px;
       margin: 15px auto;
-      font-size: clamp(1rem, 2.4vw, 1.1rem);
-      line-height: 1.7;
+      font-size: clamp(0.975rem, 2.2vw, 1.075rem);
+      line-height: 1.75;
       padding: 0 6px;
+      color: var(--text-primary);
     }
-    ul.pub-list {
-      list-style-type: none;
-      padding: 0;
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    ul.pub-list li { margin-bottom: 20px; }
+
     footer {
-      margin: 50px 0 30px 0;
-      font-size: 0.9em;
-      color: rgba(255, 255, 255, 0.8);
+      margin: 40px 0 32px 0;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--t-fast);
+    }
+
+    footer a:hover { color: var(--accent); }
+
+    @keyframes sectionFadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      section { animation: none; }
+      .nav-pages a, .nav-links a { transition: none; }
     }
 
     @media (max-width: 800px) {
       .sidebar {
         width: 100%;
         height: auto;
-        min-height: 50px;
         position: fixed;
         top: 0;
         left: 0;
-        display: flex;
         flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
-        padding: 6px 8px;
-        box-sizing: border-box;
+        padding: 10px 12px 8px;
+        border-right: none;
+        border-bottom: 1px solid var(--sidebar-border);
+        backdrop-filter: blur(20px) saturate(1.5);
+        -webkit-backdrop-filter: blur(20px) saturate(1.5);
       }
+
+      .nav-section-label { display: none; }
+
       .nav-pages {
         flex-direction: row;
-        gap: 4px;
-        margin-bottom: 4px;
+        gap: 6px;
+        margin-bottom: 6px;
       }
+
       .nav-pages a {
         flex: 1;
-        padding: 6px 4px;
-        font-size: 0.75rem;
-        border-radius: 4px;
+        justify-content: center;
+        padding: 8px 6px;
+        font-size: 0.8rem;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        border-radius: 6px;
+        letter-spacing: 0;
       }
-      .nav-divider { margin: 2px 0 4px 0; }
+
+      .nav-pages a:hover {
+        padding-left: 6px;
+        border-bottom-color: rgba(125, 211, 252, 0.4);
+      }
+
+      .nav-pages a.active {
+        padding-left: 6px;
+        border-bottom-color: var(--accent);
+        border-left: none;
+      }
+
+      .nav-divider { margin: 0 0 6px; }
+
       .nav-links {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
+        gap: 4px;
         flex: unset;
       }
+
       .nav-links a {
         flex: 1;
-        text-align: center;
-        min-width: auto;
-        padding: 6px 0;
-        font-size: 0.75rem;
-        border-radius: 4px;
-        min-height: unset;
+        justify-content: center;
+        padding: 7px 4px;
+        font-size: 0.78rem;
+        border-left: none;
+        border-radius: 6px;
+        letter-spacing: 0;
+        min-height: 36px;
       }
+
+      .nav-links a:hover { padding-left: 4px; }
+
       main {
         margin-left: 0;
-        padding-top: 110px;
+        padding-top: 116px;
       }
+
+      section {
+        padding: 24px 20px;
+        margin: 24px 0;
+        border-radius: 12px;
+      }
+    }
+
+    /* about.html-specific styles */
+    ul.pub-list {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    ul.pub-list li {
+      margin-bottom: 16px;
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      transition: background var(--t-fast), border-color var(--t-fast);
+    }
+
+    ul.pub-list li:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(125, 211, 252, 0.2);
+    }
+
+    ul.pub-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      position: relative;
+      transition: color var(--t-fast);
+    }
+
+    ul.pub-list a::after {
+      content: ' →';
+      opacity: 0;
+      transition: opacity var(--t-fast);
+    }
+
+    ul.pub-list a:hover { color: #bae6fd; }
+    ul.pub-list a:hover::after { opacity: 1; }
+
+    .education-entry {
+      margin-bottom: 16px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      border: 1px solid var(--card-border);
+      text-align: left;
+    }
+
+    .education-entry:last-child { margin-bottom: 0; }
+
+    .education-entry strong {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .education-entry em {
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
   <nav class="sidebar" aria-label="Primary">
+    <p class="nav-section-label">Navigate</p>
     <div class="nav-pages">
       <a href="about.html" class="active">About Me</a>
       <a href="index.html">Stepaniak Consulting LLC</a>
     </div>
     <hr class="nav-divider">
+    <p class="nav-section-label">Connect</p>
     <div class="nav-links">
       <a href="https://www.linkedin.com/in/tylerstepaniak" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="https://github.com/tyst-ucsf" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -216,11 +422,12 @@
       <p>
         I'm also working on publishing a paper related to breath-based TB diagnostics.
       </p>
+    </section>
 
     <section id="education">
       <h2>Education</h2>
-      <div style="max-width:700px; margin:0 auto; text-align:left;">
-        <div style="margin-bottom:25px;">
+      <div style="max-width:700px; margin:0 auto;">
+        <div class="education-entry">
           <strong>Master of Science</strong><br>
           Institute for Global Health Sciences (IGHS)<br>
           University of California, San Francisco, CA — <em>July 2025</em><br>
@@ -230,7 +437,7 @@
             Developed machine learning models (<em>SVM, LASSO</em>) to predict disease status.
           </span>
         </div>
-        <div>
+        <div class="education-entry">
           <strong>Bachelor of Arts</strong><br>
           Double Major in Biochemistry and Philosophy<br>
           University of Colorado at Boulder, CO — <em>December 2021</em>
@@ -262,9 +469,7 @@
     <footer>
       &copy; 2025 stepaniak.com
       <br>
-      <a href="mailto:info@stepaniak.com" style="color:#fff; text-decoration:none; margin-top:6px; display:inline-block;">
-        info@stepaniak.com
-      </a>
+      <a href="mailto:info@stepaniak.com">info@stepaniak.com</a>
     </footer>
   </main>
 </body>
