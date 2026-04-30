@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stepaniak Consulting LLC</title>
+  <title>Tyler Stepaniak | About Me</title>
   <link rel="icon" href="ts.ico" type="image/x-icon">
   <link rel="icon" type="image/png" href="ts.png">
   <style>
@@ -98,11 +98,6 @@
       margin: 20px 0 10px 0;
       font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     }
-    header p.tagline {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: rgba(255,255,255,0.75);
-      margin: 6px 0 0 0;
-    }
     section {
       width: 100%;
       max-width: 900px;
@@ -120,21 +115,14 @@
       line-height: 1.7;
       padding: 0 6px;
     }
-    .contact-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: #fff;
-      font-size: clamp(1rem, 2.4vw, 1.15rem);
-      font-weight: bold;
-      text-decoration: none;
-      border-bottom: 2px solid rgba(255,255,255,0.5);
-      padding-bottom: 2px;
-      transition: border-color 0.2s, color 0.2s;
+    ul.pub-list {
+      list-style-type: none;
+      padding: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
     }
-    .contact-link:hover {
-      color: #c8e6c9;
-      border-color: #c8e6c9;
-    }
+    ul.pub-list li { margin-bottom: 20px; }
     footer {
       margin: 50px 0 30px 0;
       font-size: 0.9em;
@@ -192,8 +180,8 @@
 <body>
   <nav class="sidebar" aria-label="Primary">
     <div class="nav-pages">
-      <a href="about.html">About Me</a>
-      <a href="index.html" class="active">Stepaniak Consulting LLC</a>
+      <a href="about.html" class="active">About Me</a>
+      <a href="index.html">Stepaniak Consulting LLC</a>
     </div>
     <hr class="nav-divider">
     <div class="nav-links">
@@ -206,43 +194,76 @@
 
   <main>
     <header>
-      <h1>Stepaniak Consulting LLC</h1>
-      <p class="tagline">Data-driven solutions for healthcare and beyond</p>
+      <h1>Tyler Stepaniak</h1>
     </header>
 
-    <section id="consulting">
-      <h2>What We Do</h2>
+    <section id="about">
+      <h2>About Me</h2>
+      <p><b>On a mission to promote excellence and equity in healthcare</b></p>
       <p>
-        Stepaniak Consulting LLC provides expert consulting services at the intersection of data science,
-        global health, and applied analytics. We help organizations harness their data to drive
-        meaningful outcomes — from pipeline architecture and predictive modeling to evidence-based
-        program evaluation and AI-augmented workflows.
-      </p>
-      <p>
-        With a background spanning public health agencies, academic research, and international
-        organizations, we bring rigorous analytical thinking and practical implementation experience
-        to every engagement.
+        M.S. in Global Health Sciences from UCSF with expertise in Python, R, SQL, and data visualization.
+        Skilled in predictive modeling, ETL pipeline development, and AI-augmented tools.
+        Adept at bridging wet lab, clinical, and data sciences.
+        Interned in Geneva with WHO, developing a data-sharing tool to support global health initiatives.
       </p>
     </section>
 
-    <section id="services">
-      <h2>Services</h2>
-      <p>Data science &amp; statistical analysis &bull; ETL pipeline development &bull; Predictive modeling &bull; Health program evaluation &bull; AI tool integration &bull; Research &amp; publication support</p>
+    <section id="current">
+      <h2>Currently...</h2>
+      <p>
+        I'm currently with Montana's Department of Public Health and Human Service's Early Childhood and Family Support Division. My role focuses on supporting WIC across the state. For more information on my work history, please see my LinkedIn.
+      </p>
+      <p>
+        I'm also working on publishing a paper related to breath-based TB diagnostics.
+      </p>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div style="max-width:700px; margin:0 auto; text-align:left;">
+        <div style="margin-bottom:25px;">
+          <strong>Master of Science</strong><br>
+          Institute for Global Health Sciences (IGHS)<br>
+          University of California, San Francisco, CA — <em>July 2025</em><br>
+          <br>
+          <span style="font-size:0.95em; line-height:1.6;">
+            <strong>Capstone:</strong> Volatile Organic Compound Biosignatures in Breath as Diagnostic Tool for Tuberculosis Triage in Adults.<br>
+            Developed machine learning models (<em>SVM, LASSO</em>) to predict disease status.
+          </span>
+        </div>
+        <div>
+          <strong>Bachelor of Arts</strong><br>
+          Double Major in Biochemistry and Philosophy<br>
+          University of Colorado at Boulder, CO — <em>December 2021</em>
+        </div>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Get in Touch</h2>
-      <p>
-        Interested in working together? Reach out directly and we'll get back to you promptly.
-      </p>
-      <a href="mailto:Consulting@Stepaniak.com" class="contact-link">Consulting@Stepaniak.com</a>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="pub-list">
+        <li>
+          Combined Weight Loss and Exercise Training Alters Skeletal Muscle Subcellular Lipid Localization and Intermuscular Adipose Tissue Cellular Composition.<br>
+          Zemsky et al., <em>Diabetes</em>, <b>2025</b><br>
+          <a href="https://doi.org/10.2337/db25-0492" target="_blank" rel="noopener noreferrer">Read Article</a>
+        </li>
+        <li>
+          It's Time for Change, We Cannot Let Ukraine Be the Next Congo.<br>
+          Stepaniak (Op-ed), UCSF Synapse, <b>2025</b><br>
+          <a href="https://synapse.ucsf.edu/articles/2025/05/06/its-time-change-we-cannot-let-ukraine-be-next-congo" target="_blank" rel="noopener noreferrer">Read Article</a>
+        </li>
+        <li>
+          Coronal Heating as Determined by the Solar Flare Frequency Distribution Obtained by Aggregating Case Studies.<br>
+          Mason et al., <em>ApJ</em>, <b>2023</b>, Vol. 948, 71<br>
+          <a href="https://doi.org/10.3847/1538-4357/accc89" target="_blank" rel="noopener noreferrer">Read Article</a>
+        </li>
+      </ul>
     </section>
 
     <footer>
-      &copy; 2025 Stepaniak Consulting LLC
+      &copy; 2025 stepaniak.com
       <br>
-      <a href="mailto:Consulting@Stepaniak.com" style="color:#fff; text-decoration:none; margin-top:6px; display:inline-block;">
-        Consulting@Stepaniak.com
+      <a href="mailto:info@stepaniak.com" style="color:#fff; text-decoration:none; margin-top:6px; display:inline-block;">
+        info@stepaniak.com
       </a>
     </footer>
   </main>
