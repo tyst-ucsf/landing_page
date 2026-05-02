@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stepaniak Consulting LLC</title>
+  <title>Stepaniak Analytics LLC</title>
   <link rel="icon" href="ts.ico" type="image/x-icon">
   <link rel="icon" type="image/png" href="ts.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,15 +14,16 @@
     html { scroll-behavior: smooth; }
 
     :root {
-      --bg:           #07111d;
-      --bg-section:   #0b1724;
-      --bg-alt:       #05101a;
-      --accent:       #7dd3fc;
-      --accent-glow:  rgba(125, 211, 252, 0.18);
-      --text-primary: #f1f5f9;
-      --text-secondary: rgba(241, 245, 249, 0.68);
-      --text-muted:   rgba(241, 245, 249, 0.42);
-      --border:       rgba(255, 255, 255, 0.06);
+      --bg:           #080c08;
+      --bg-section:   #0d140d;
+      --bg-alt:       #060a06;
+      --accent:       #5aab4a;
+      --accent-glow:  rgba(90, 171, 74, 0.16);
+      --accent-copper: #c47840;
+      --text-primary: #eaf0e2;
+      --text-secondary: rgba(234, 240, 226, 0.68);
+      --text-muted:   rgba(234, 240, 226, 0.42);
+      --border:       rgba(255, 255, 255, 0.07);
       --font-display: 'Fraunces', Georgia, serif;
       --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
       --nav-height:   58px;
@@ -47,7 +48,7 @@
     }
 
     .topnav.scrolled {
-      background: rgba(7, 17, 29, 0.88);
+      background: rgba(8, 12, 8, 0.90);
       backdrop-filter: blur(24px) saturate(1.6);
       -webkit-backdrop-filter: blur(24px) saturate(1.6);
       border-bottom: 1px solid var(--border);
@@ -100,7 +101,7 @@
 
     .nav-menu .nav-cta {
       color: var(--accent);
-      border: 1px solid rgba(125, 211, 252, 0.28);
+      border: 1px solid rgba(90, 171, 74, 0.32);
       margin-left: 6px;
     }
 
@@ -131,21 +132,21 @@
 
     .hero-orb-1 {
       width: 700px; height: 700px;
-      background: radial-gradient(circle at center, #1a4a72, transparent 70%);
+      background: radial-gradient(circle at center, #1a4a1a, transparent 70%);
       top: -180px; left: -200px;
       animation: drift 10s ease-in-out infinite alternate;
     }
 
     .hero-orb-2 {
       width: 500px; height: 500px;
-      background: radial-gradient(circle at center, #0d2d50, transparent 70%);
+      background: radial-gradient(circle at center, #0d280d, transparent 70%);
       bottom: -80px; right: -120px;
       animation: drift 13s ease-in-out infinite alternate-reverse;
     }
 
     .hero-orb-3 {
       width: 300px; height: 300px;
-      background: radial-gradient(circle at center, #153e64, transparent 70%);
+      background: radial-gradient(circle at center, #172d17, transparent 70%);
       top: 40%; left: 55%;
       animation: drift 8s ease-in-out infinite alternate;
       animation-delay: -3s;
@@ -195,7 +196,7 @@
       display: inline-block;
       padding: 15px 36px;
       background: var(--accent);
-      color: #07111d;
+      color: #080c08;
       font-family: var(--font-body);
       font-weight: 700;
       font-size: 0.88rem;
@@ -207,7 +208,7 @@
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 36px rgba(125, 211, 252, 0.28);
+      box-shadow: 0 12px 36px rgba(90, 171, 74, 0.28);
     }
 
     .scroll-hint {
@@ -305,13 +306,13 @@
       transition: background 0.22s ease;
     }
 
-    .service-item:hover { background: rgba(125, 211, 252, 0.04); }
+    .service-item:hover { background: rgba(90, 171, 74, 0.06); }
 
     .service-num {
       font-family: var(--font-display);
       font-weight: 200;
       font-size: 2.2rem;
-      color: rgba(125, 211, 252, 0.25);
+      color: rgba(196, 120, 64, 0.70);
       line-height: 1;
       margin-bottom: 16px;
     }
@@ -333,7 +334,7 @@
       text-decoration: none;
       margin-top: 28px;
       letter-spacing: -0.01em;
-      border-bottom: 1px solid rgba(125, 211, 252, 0.28);
+      border-bottom: 1px solid rgba(90, 171, 74, 0.32);
       padding-bottom: 4px;
       transition: border-color 0.2s ease, opacity 0.2s ease;
     }
@@ -398,10 +399,10 @@
 
   <nav class="topnav" id="topnav" aria-label="Primary">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Stepaniak Consulting</a>
+      <a href="index.html" class="nav-brand">Stepaniak Analytics</a>
       <div class="nav-menu">
         <a href="about.html" class="hide-mobile">About</a>
-        <a href="https://www.linkedin.com/company/stepaniak-consulting-llc" target="_blank" rel="noopener noreferrer" class="hide-mobile">Business LinkedIn</a>
+        <a href="https://www.linkedin.com/company/stepaniak-analytics-llc" target="_blank" rel="noopener noreferrer" class="hide-mobile">Business LinkedIn</a>
         <a href="https://www.linkedin.com/in/tylerstepaniak" target="_blank" rel="noopener noreferrer" class="hide-mobile">Personal LinkedIn</a>
         <a href="https://github.com/tyst-ucsf" target="_blank" rel="noopener noreferrer" class="hide-mobile">GitHub</a>
         <a href="mailto:Consulting@Stepaniak.com" class="nav-cta">Contact</a>
@@ -415,9 +416,9 @@
     <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
 
     <div class="hero-content">
-      <span class="eyebrow reveal-item">Data Science &middot; Global Health &middot; Applied Analytics</span>
-      <h1 class="reveal-item">Stepaniak<br>Consulting<br>LLC</h1>
-      <p class="hero-sub reveal-item">Data-driven solutions for healthcare and beyond</p>
+      <span class="eyebrow reveal-item">Data Sciences &middot; Public Health &middot; Global Health</span>
+      <h1 class="reveal-item">Where data meets<br>public health.</h1>
+      <p class="hero-sub reveal-item">Expert analytics and consulting at the intersection of data science and global health</p>
       <a href="mailto:Consulting@Stepaniak.com" class="btn reveal-item">Start a Conversation</a>
     </div>
 
@@ -431,7 +432,7 @@
       <span class="section-label reveal-item">Our Work</span>
       <h2 class="panel-headline reveal-item">At the intersection of data science,<br>global health, and applied analytics.</h2>
       <p class="panel-body reveal-item">
-        Stepaniak Consulting LLC provides expert consulting services at the intersection of data science,
+        Stepaniak Analytics LLC provides expert analytics and consulting services at the intersection of data science,
         global health, and applied analytics. We help organizations harness their data to drive
         meaningful outcomes — from pipeline architecture and predictive modeling to evidence-based
         program evaluation and AI-augmented workflows.
@@ -489,7 +490,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Stepaniak Consulting LLC &nbsp;&bull;&nbsp;
+    &copy; 2025 Stepaniak Analytics LLC &nbsp;&bull;&nbsp;
     <a href="mailto:Consulting@Stepaniak.com">Consulting@Stepaniak.com</a>
   </footer>
 
