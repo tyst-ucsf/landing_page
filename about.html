@@ -410,15 +410,93 @@
       .scroll-hint-line { animation: none; }
     }
 
+    /* ── HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--text-primary);
+      border-radius: 6px;
+      transition: background 0.18s ease;
+      flex-shrink: 0;
+    }
+
+    .nav-hamburger:hover { background: rgba(255, 255, 255, 0.07); }
+
+    .nav-hamburger span {
+      display: block;
+      width: 20px;
+      height: 1.5px;
+      background: currentColor;
+      border-radius: 2px;
+      transition: transform 0.28s var(--ease-out), opacity 0.2s ease;
+      transform-origin: center;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .nav-mobile-menu {
+      position: fixed;
+      top: var(--nav-height);
+      left: 0; right: 0;
+      background: rgba(8, 12, 8, 0.97);
+      backdrop-filter: blur(24px) saturate(1.5);
+      -webkit-backdrop-filter: blur(24px) saturate(1.5);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px 18px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out), visibility 0.25s;
+      pointer-events: none;
+    }
+
+    .nav-mobile-menu.open {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .nav-mobile-menu a {
+      display: block;
+      padding: 13px 16px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+
+    .nav-mobile-menu a:hover,
+    .nav-mobile-menu a:active {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-mobile-menu .mob-cta { color: var(--accent); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       .edu-grid { grid-template-columns: 1fr; }
       .panel { padding: 80px 24px; }
-      .nav-menu a.hide-mobile { display: none; }
     }
 
-    @media (max-width: 560px) {
-      .nav-menu a.hide-mobile { display: none; }
+    @media (max-width: 640px) {
+      .nav-hamburger { display: flex; }
+      .nav-menu a { display: none; }
     }
   </style>
 </head>
@@ -436,10 +514,22 @@
         <a href="https://www.linkedin.com/in/tylerstepaniak" target="_blank" rel="noopener noreferrer" class="hide-mobile">Personal LinkedIn</a>
         <a href="https://github.com/tyst-ucsf" target="_blank" rel="noopener noreferrer" class="hide-mobile">GitHub</a>
         <a href="https://orcid.org/0000-0003-2761-9877" target="_blank" rel="noopener noreferrer" class="hide-mobile">ORCID</a>
-        <a href="mailto:tyler@stepaniak.com" class="nav-cta">Email</a>
+        <a href="mailto:tyler@stepaniak.com" class="nav-cta hide-mobile">Email</a>
       </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <div class="nav-mobile-menu" id="navMobileMenu">
+    <a href="index.html">Stepaniak Analytics LLC</a>
+    <a href="https://www.linkedin.com/company/stepaniak-analytics-llc" target="_blank" rel="noopener noreferrer">Business LinkedIn</a>
+    <a href="https://www.linkedin.com/in/tylerstepaniak" target="_blank" rel="noopener noreferrer">Personal LinkedIn</a>
+    <a href="https://github.com/tyst-ucsf" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://orcid.org/0000-0003-2761-9877" target="_blank" rel="noopener noreferrer">ORCID</a>
+    <a href="mailto:tyler@stepaniak.com" class="mob-cta">Email</a>
+  </div>
 
   <section class="hero">
     <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
@@ -570,6 +660,24 @@
       section.querySelectorAll('.reveal-item').forEach((el, i) => {
         el.style.transitionDelay = `${i * 0.11}s`;
         observer.observe(el);
+      });
+    });
+
+    // ── HAMBURGER ──
+    const hamburger = document.getElementById('navHamburger');
+    const mobileMenu = document.getElementById('navMobileMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
       });
     });
   </script>
