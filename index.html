@@ -72,6 +72,32 @@
       text-decoration: none;
       letter-spacing: -0.01em;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      height: 32px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      display: block;
+      margin: 0 auto 40px;
+    }
+
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 14px;
+      display: block;
+      opacity: 0.88;
     }
 
     .nav-menu {
@@ -399,7 +425,10 @@
 
   <nav class="topnav" id="topnav" aria-label="Primary">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Stepaniak Analytics</a>
+      <a href="index.html" class="nav-brand">
+        <img src="Logo.png" alt="" class="nav-logo" aria-hidden="true">
+        Stepaniak Analytics
+      </a>
       <div class="nav-menu">
         <a href="about.html" class="hide-mobile">About</a>
         <a href="https://www.linkedin.com/company/stepaniak-analytics-llc" target="_blank" rel="noopener noreferrer" class="hide-mobile">Business LinkedIn</a>
@@ -416,9 +445,7 @@
     <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
 
     <div class="hero-content">
-      <span class="eyebrow reveal-item">Data Sciences &middot; Public Health &middot; Global Health</span>
-      <h1 class="reveal-item">Where data meets<br>public health.</h1>
-      <p class="hero-sub reveal-item">Expert analytics and consulting at the intersection of data science and global health</p>
+      <img src="Hero.png" alt="Stepaniak Analytics LLC — Where data meets public health" class="hero-img reveal-item">
       <a href="mailto:Consulting@Stepaniak.com" class="btn reveal-item">Start a Conversation</a>
     </div>
 
@@ -451,26 +478,32 @@
       <h2 class="panel-headline reveal-item">What we offer</h2>
       <div class="services-grid">
         <div class="service-item reveal-item">
+          <img src="icon-datascience.svg" alt="" class="service-icon" aria-hidden="true">
           <div class="service-num">01</div>
           <div class="service-name">Data Science &amp; Statistical Analysis</div>
         </div>
         <div class="service-item reveal-item">
+          <img src="icon-etl.svg" alt="" class="service-icon" aria-hidden="true">
           <div class="service-num">02</div>
           <div class="service-name">ETL Pipeline Development</div>
         </div>
         <div class="service-item reveal-item">
+          <img src="icon-modeling.svg" alt="" class="service-icon" aria-hidden="true">
           <div class="service-num">03</div>
           <div class="service-name">Predictive Modeling</div>
         </div>
         <div class="service-item reveal-item">
+          <img src="icon-evaluation.svg" alt="" class="service-icon" aria-hidden="true">
           <div class="service-num">04</div>
           <div class="service-name">Health Program Evaluation</div>
         </div>
         <div class="service-item reveal-item">
+          <img src="icon-ai.svg" alt="" class="service-icon" aria-hidden="true">
           <div class="service-num">05</div>
           <div class="service-name">AI Tool Integration</div>
         </div>
         <div class="service-item reveal-item">
+          <img src="icon-research.svg" alt="" class="service-icon" aria-hidden="true">
           <div class="service-num">06</div>
           <div class="service-name">Research &amp; Publication Support</div>
         </div>

@@ -72,6 +72,16 @@
       text-decoration: none;
       letter-spacing: -0.01em;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      height: 32px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
     }
 
     .nav-menu {
@@ -416,7 +426,10 @@
 
   <nav class="topnav" id="topnav" aria-label="Primary">
     <div class="nav-inner">
-      <a href="index.html" class="nav-brand">Stepaniak Analytics</a>
+      <a href="index.html" class="nav-brand">
+        <img src="Logo.png" alt="" class="nav-logo" aria-hidden="true">
+        Stepaniak Analytics
+      </a>
       <div class="nav-menu">
         <a href="about.html" class="nav-active hide-mobile">About</a>
         <a href="https://www.linkedin.com/company/stepaniak-analytics-llc" target="_blank" rel="noopener noreferrer" class="hide-mobile">Business LinkedIn</a>
